@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="NewsDetailHeaderTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="395" id="KGk-i7-Jjw" customClass="NewsDetailHeaderTableViewCell" customModule="NewsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="395"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="395"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash_Screen_Image" translatesAutoresizingMaskIntoConstraints="NO" id="eCz-zH-ml7">
+                        <rect key="frame" x="0.0" y="0.0" width="376" height="395"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="left" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Nw-rG-1ME">
+                        <rect key="frame" x="-3" y="345" width="382" height="50"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="aPX-F6-Efv"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="5Nw-rG-1ME" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="-3" id="2we-if-3FD"/>
+                    <constraint firstItem="eCz-zH-ml7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="348-yJ-2r0"/>
+                    <constraint firstAttribute="trailing" secondItem="eCz-zH-ml7" secondAttribute="trailing" id="BQ8-dS-sr7"/>
+                    <constraint firstAttribute="trailing" secondItem="5Nw-rG-1ME" secondAttribute="trailing" constant="-3" id="TP4-hf-wIe"/>
+                    <constraint firstAttribute="bottom" secondItem="eCz-zH-ml7" secondAttribute="bottom" id="fSG-Qf-rlG"/>
+                    <constraint firstItem="eCz-zH-ml7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pgx-mg-lZT"/>
+                    <constraint firstAttribute="bottom" secondItem="5Nw-rG-1ME" secondAttribute="bottom" id="s1z-fD-Mm6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backgroundImage" destination="eCz-zH-ml7" id="GN8-jn-1ny"/>
+                <outlet property="containerView" destination="5Nw-rG-1ME" id="Ifl-H5-oKG"/>
+            </connections>
+            <point key="canvasLocation" x="85.496183206106863" y="143.3098591549296"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Splash_Screen_Image" width="539.5" height="960"/>
+    </resources>
+</document>

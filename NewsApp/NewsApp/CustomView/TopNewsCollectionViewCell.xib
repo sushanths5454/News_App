@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TopNewsCollectionViewCell" reuseIdentifier="TopNewsCollectionViewCell" id="gTV-IL-0wX" customClass="TopNewsCollectionViewCell" customModule="NewsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="210"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="386" height="210"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsB-5K-SdT">
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="210"/>
+                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="t" translatesAutoresizingMaskIntoConstraints="NO" id="e88-fm-fnb">
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="210"/>
+                        <color key="backgroundColor" name="Backgroundcolor"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzU-4d-Qe7">
+                        <rect key="frame" x="20" y="149.66666666666666" width="346" height="20.333333333333343"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="WsB-5K-SdT" secondAttribute="trailing" id="000-rE-cXA"/>
+                <constraint firstAttribute="bottom" secondItem="WsB-5K-SdT" secondAttribute="bottom" id="Afq-EL-v2N"/>
+                <constraint firstAttribute="trailing" secondItem="e88-fm-fnb" secondAttribute="trailing" id="DLB-pE-ZDA"/>
+                <constraint firstItem="FzU-4d-Qe7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Dnz-u7-ngb"/>
+                <constraint firstItem="e88-fm-fnb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="S3w-ER-d27"/>
+                <constraint firstItem="WsB-5K-SdT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="S9K-5G-w6E"/>
+                <constraint firstItem="e88-fm-fnb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Tgl-AM-YaA"/>
+                <constraint firstAttribute="bottom" secondItem="e88-fm-fnb" secondAttribute="bottom" id="bNR-k8-uhB"/>
+                <constraint firstAttribute="trailing" secondItem="FzU-4d-Qe7" secondAttribute="trailing" constant="20" id="c1T-oz-lDL"/>
+                <constraint firstAttribute="bottom" secondItem="FzU-4d-Qe7" secondAttribute="bottom" constant="40" id="d5E-ki-SHK"/>
+                <constraint firstItem="WsB-5K-SdT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sNS-G3-FuG"/>
+            </constraints>
+            <size key="customSize" width="386" height="210"/>
+            <connections>
+                <outlet property="thumbnailImage" destination="e88-fm-fnb" id="5tr-04-XMr"/>
+                <outlet property="title" destination="FzU-4d-Qe7" id="lLg-0z-tOR"/>
+            </connections>
+            <point key="canvasLocation" x="319.08396946564886" y="76.056338028169023"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="t" width="2016" height="1512"/>
+        <namedColor name="Backgroundcolor">
+            <color red="0.047058823529411764" green="0.10980392156862745" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
