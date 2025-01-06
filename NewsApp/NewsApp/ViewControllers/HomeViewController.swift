@@ -42,11 +42,15 @@ class HomeViewController: BaseViewController {
     
     //MARK: Pull to refresh
     override func refreshData() {
+        viewModel.page = 1
+        viewModel.isLoading = false
+        viewModel.isMoreDataPresent = true
         fetchNews()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             self.refreshControl.endRefreshing()
         })
     }
+    
     //MARK: Navigation Bar setup
     private func NavigationBarSetup() {
         if let navigationBar = self.navigationController?.navigationBar {
