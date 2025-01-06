@@ -14,7 +14,6 @@ class TopNewsContianerViewTableViewCell: UITableViewCell {
     weak var delegate: HandleDetailScreenNavigation?
     var newsList = [Article]() {
         didSet {
-            
             collectionView.reloadData()
         }
     }
@@ -25,6 +24,11 @@ class TopNewsContianerViewTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         registerCell()
        
+    }
+    
+    override func prepareForReuse() {
+        newsList = []
+        
     }
     
     func registerCell() {

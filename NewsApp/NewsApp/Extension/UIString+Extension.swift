@@ -17,5 +17,21 @@ extension String {
         return size.width
     }
     
+    func convertDateString() -> String? {
+      
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        inputFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        if let date = inputFormatter.date(from: self) {
+            
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "dd-MM-yyyy"
+            return outputFormatter.string(from: date)
+        }
+        
+        return nil
+    }
+    
      
 }

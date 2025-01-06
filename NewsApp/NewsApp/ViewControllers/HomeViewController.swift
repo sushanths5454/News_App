@@ -15,7 +15,7 @@ protocol HandleDetailScreenNavigation: AnyObject{
     func showNewDetailsScreen(articel: Article?)
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     //MARK: IBOutlet
     @IBOutlet weak var categoryHeader: UICollectionView!
     @IBOutlet weak var tableview: UITableView!
@@ -35,9 +35,18 @@ class HomeViewController: UIViewController {
         registerTableViewCell()
         fetchNews()
         NavigationBarSetup()
+        
+        tableview.refreshControl = refreshControl
     
     }
     
+    //MARK: Pull to refresh
+    override func refreshData() {
+        fetchNews()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            self.refreshControl.endRefreshing()
+        })
+    }
     //MARK: Navigation Bar setup
     private func NavigationBarSetup() {
         if let navigationBar = self.navigationController?.navigationBar {
@@ -84,8 +93,10 @@ class HomeViewController: UIViewController {
     //MARK: API Call: Top News and All News
     private func fetchNews() {
            Task {
+               await viewModel.resetAllDataOnTabSwtich()
                await (viewModel.fetchTopNewsItems(), viewModel.fetchAllNewsItems())
                tableview.reloadData()
+               self.hideAcitivityIndicator()
            }
        }
   
@@ -96,6 +107,13 @@ class HomeViewController: UIViewController {
         detailVC.modalPresentationStyle = .fullScreen
         if let viewController = self.parent {
             viewController.present(detailVC, animated: true, completion: nil)
+        }
+    }
+    
+    private func loadMore() {
+        Task {
+            await viewModel.fetchAllNewsItems()
+            tableview.reloadData()
         }
     }
 }
@@ -170,6 +188,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return swipeActions
         }
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if HomePageSection(rawValue: indexPath.section) == .allNews && !viewModel.isLoading && viewModel.isMoreDataPresent && indexPath.row >= viewModel.numberOfRows(section: HomePageSection.allNews.rawValue) - 1 {
+            loadMore()
+        }
+        
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -195,6 +220,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     //MARK: Collection View: did select
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.showActivityIndicator()
+        viewModel.page = 1
+        viewModel.isLoading = false
+        viewModel.isMoreDataPresent = true
         viewModel.selectedCategoryHeader = indexPath.row
         fetchNews()
         categoryHeader.reloadData()

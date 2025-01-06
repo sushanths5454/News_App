@@ -8,7 +8,7 @@
 import Foundation
 
 class NetworkManager {
-    static let shared  = NetworkManager()
+    static var shared  = NetworkManager()
     
     func fetchNewsItems(url: String) async throws -> [Article] {
         guard let url = URL(string: url) else {

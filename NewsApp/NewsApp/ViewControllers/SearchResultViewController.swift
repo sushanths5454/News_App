@@ -93,7 +93,19 @@ extension SearchResultViewController: UITableViewDataSource, UITableViewDelegate
     //MARK: Tableview - Did select
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel?.saveSearchHistory(query:viewModel?.ongoingSearches[safe: indexPath.row] ?? "")
-        showDetailScreen(article: viewModel?.getFilterArticleAt(index: indexPath.row))
+        switch ResultType(rawValue: indexPath.section) {
+        case .ongoingSearches:
+            if let article = viewModel?.getFilterArticleAt(index: indexPath.row) {
+                viewModel?.saveArticleToUserDefaults(article: article)
+                showDetailScreen(article: article)
+            }
+            
+        case .previousSearches:
+            showDetailScreen(article: viewModel?.getSavedArticleAt(index: indexPath.row))
+        default:
+            break
+        }
+        
     }
     
 

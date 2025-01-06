@@ -13,7 +13,6 @@
 		8428CAA02D27AD460011829E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8428CA9E2D27AD460011829E /* Main.storyboard */; };
 		8428CAA52D27AD480011829E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8428CAA42D27AD480011829E /* Assets.xcassets */; };
 		8428CAA82D27AD480011829E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8428CAA62D27AD480011829E /* LaunchScreen.storyboard */; };
-		8428CAB32D27AD480011829E /* NewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CAB22D27AD480011829E /* NewsAppTests.swift */; };
 		8428CABD2D27AD480011829E /* NewsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CABC2D27AD480011829E /* NewsAppUITests.swift */; };
 		8428CABF2D27AD480011829E /* NewsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CABE2D27AD480011829E /* NewsAppUITestsLaunchTests.swift */; };
 		8428CAD02D27B95E0011829E /* AppIntrodViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CACF2D27B95E0011829E /* AppIntrodViewcontroller.swift */; };
@@ -58,6 +57,8 @@
 		849249562D2AFB6B00EF2E7E /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849249542D2AFB6B00EF2E7E /* SearchResultViewController.xib */; };
 		8492495A2D2AFE2800EF2E7E /* SearchedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849249582D2AFE2800EF2E7E /* SearchedItemTableViewCell.swift */; };
 		8492495B2D2AFE2800EF2E7E /* SearchedItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849249592D2AFE2800EF2E7E /* SearchedItemTableViewCell.xib */; };
+		8492495F2D2B97F200EF2E7E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492495E2D2B97F200EF2E7E /* BaseViewController.swift */; };
+		849249612D2BA0FE00EF2E7E /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849249602D2BA0FE00EF2E7E /* HomeViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +88,6 @@
 		8428CAA72D27AD480011829E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8428CAA92D27AD480011829E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8428CAAE2D27AD480011829E /* NewsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8428CAB22D27AD480011829E /* NewsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppTests.swift; sourceTree = "<group>"; };
 		8428CAB82D27AD480011829E /* NewsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8428CABC2D27AD480011829E /* NewsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITests.swift; sourceTree = "<group>"; };
 		8428CABE2D27AD480011829E /* NewsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -133,6 +133,8 @@
 		849249542D2AFB6B00EF2E7E /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
 		849249582D2AFE2800EF2E7E /* SearchedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedItemTableViewCell.swift; sourceTree = "<group>"; };
 		849249592D2AFE2800EF2E7E /* SearchedItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchedItemTableViewCell.xib; sourceTree = "<group>"; };
+		8492495E2D2B97F200EF2E7E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		849249602D2BA0FE00EF2E7E /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,7 +209,7 @@
 		8428CAB12D27AD480011829E /* NewsAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				8428CAB22D27AD480011829E /* NewsAppTests.swift */,
+				849249602D2BA0FE00EF2E7E /* HomeViewModelTests.swift */,
 			);
 			path = NewsAppTests;
 			sourceTree = "<group>";
@@ -238,6 +240,7 @@
 				8492494F2D2AA13600EF2E7E /* BookMarkViewController.swift */,
 				849249532D2AFB6B00EF2E7E /* SearchResultViewController.swift */,
 				849249542D2AFB6B00EF2E7E /* SearchResultViewController.xib */,
+				8492495E2D2B97F200EF2E7E /* BaseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 			files = (
 				849248FE2D291AEE00EF2E7E /* NetworkManager.swift in Sources */,
 				8492495A2D2AFE2800EF2E7E /* SearchedItemTableViewCell.swift in Sources */,
+				8492495F2D2B97F200EF2E7E /* BaseViewController.swift in Sources */,
 				8428CAFC2D285B140011829E /* UIString+Extension.swift in Sources */,
 				849249012D2928B700EF2E7E /* TopNewsModel.swift in Sources */,
 				8428CAD82D27C2750011829E /* AppIntrodViewController.swift in Sources */,
@@ -508,7 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8428CAB32D27AD480011829E /* NewsAppTests.swift in Sources */,
+				849249612D2BA0FE00EF2E7E /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

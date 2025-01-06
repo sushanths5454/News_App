@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookMarkViewController: UIViewController {
+class BookMarkViewController: BaseViewController {
     //MARK: IBOutlet
     @IBOutlet weak var noBookMarkMsg: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +21,7 @@ class BookMarkViewController: UIViewController {
         registerCell()
         NavigatiobBarSetup()
         noBookMarkMsg.isHidden = true
+        tableView.refreshControl = refreshControl
         // Do any additional setup after loading the view.
     }
     
@@ -47,10 +48,18 @@ class BookMarkViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.getBookMarkedArticles()
-        if viewModel.numberOfRow() == 0 {
-            noBookMarkMsg.isHidden = false
-        }
+        noBookMarkMsg.isHidden = viewModel.numberOfRow() == 0 ? false : true
         tableView.reloadData()
+    }
+    
+    //MARK: Pull to refresh
+    override func refreshData() {
+        viewModel.getBookMarkedArticles()
+        noBookMarkMsg.isHidden = viewModel.numberOfRow() == 0 ? false : true
+        tableView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            self.refreshControl.endRefreshing()
+        })
     }
     
     //MARK: Navigation - Detail page
@@ -98,6 +107,7 @@ extension BookMarkViewController: UITableViewDataSource, UITableViewDelegate {
             
             self?.viewModel.removeAtIndex(index: indexPath.row)
             tableView.reloadData()
+            self?.noBookMarkMsg.isHidden = self?.viewModel.numberOfRow() == 0 ? false : true
             completionHandler(true)
         }
         bookMarkAction.backgroundColor = .red

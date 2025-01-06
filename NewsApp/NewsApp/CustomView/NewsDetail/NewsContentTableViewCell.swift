@@ -52,12 +52,15 @@ class NewsContentTableViewCell: UITableViewCell {
             contentTitle.text = article.description ?? ""
             title.text = article.title ?? ""
             publishedBy.text = "Published By: \(article.author ?? "")"
-            publishedDate.text = "Published: \(article.publishedAt)"
+            publishedDate.text = "Published: \(article.publishedAt.convertDateString() ?? "")"
         } else if let article = article as? Articles {
             contentTitle.text = article.descriptions ?? ""
             title.text = article.title ?? ""
             publishedBy.text = "Published By: \(article.author ?? "")"
-            publishedDate.text = "Published: \(article.publishedAt ?? "")"
+            if let date = article.publishedAt {
+                publishedDate.text = "Published: \(date.convertDateString() ?? "")"
+            }
+            
         }
     }
     

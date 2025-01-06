@@ -42,10 +42,15 @@ actor TopNewsDataSource {
     }
     
     func updateAllNewArticle(articles: [Article]) {
-        allNewsList = articles
+        allNewsList.append(contentsOf: articles)
     }
     
     func getAllNewsList() -> [Article] {
         return allNewsList
+    }
+    
+    func resetDataONTabSwitch() {
+        topNewsList = []
+        allNewsList = []
     }
 }

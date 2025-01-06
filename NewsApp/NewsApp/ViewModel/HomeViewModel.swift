@@ -45,13 +45,17 @@ class HomeViewModel {
     var selectedCategoryHeader = 0
     private var topsNewsDatasource = TopNewsDataSource()
     private var topNewList = [Article]()
-    private var allNewsList = [Article]()
+    var allNewsList = [Article]()
     
     private var filteredNewsArticles = [Article]()
     
+    private var savedArticles = [Article]()
+    
     var ongoingSearches = [String]()
     var previousSearches = [String]()
-    
+    var page = 1
+    var isLoading = false
+    var isMoreDataPresent = true
     
     func numberOfRows(section: Int) -> Int {
         switch HomePageSection(rawValue: section) {
@@ -78,13 +82,29 @@ class HomeViewModel {
     
     //MARK: API CAll - All news items
     func fetchAllNewsItems() async {
-        do {
-            let articles = try await NetworkManager.shared.fetchNewsItems(url: Constants.getURL(type: .allNews, category: CategoryHeaderItems(rawValue: selectedCategoryHeader)?.headerName() ?? ""))
-            await topsNewsDatasource.updateAllNewArticle(articles: articles)
-            await allNewsList = topsNewsDatasource.getAllNewsList()
-        } catch {
-            print(error.localizedDescription)
+        if !isLoading && isMoreDataPresent {
+            do {
+                isLoading = true
+                var url = Constants.getURL(type: .allNews, category: CategoryHeaderItems(rawValue: selectedCategoryHeader)?.headerName() ?? "")
+                url = url + "&page=\(page)"
+                let articles = try await NetworkManager.shared.fetchNewsItems(url: url)
+                await topsNewsDatasource.updateAllNewArticle(articles: articles)
+                await allNewsList = topsNewsDatasource.getAllNewsList()
+                isLoading = false
+                isMoreDataPresent = true
+                page += 1
+            } catch {
+                isLoading = false
+                isMoreDataPresent = false
+                print(error.localizedDescription)
+            }
         }
+    }
+    
+    func resetAllDataOnTabSwtich() async {
+        allNewsList = []
+        topNewList = []
+        await topsNewsDatasource.resetDataONTabSwitch()
     }
     
    // MARK: Top News list count
@@ -102,20 +122,41 @@ class HomeViewModel {
        if let savedHistory = UserDefaults.standard.array(forKey: "searchHistory") as? [String] {
            previousSearches = savedHistory
        }
+        loadSavedArticleFromUserDefaults()
     }
     
     //MARK: Saving searched articles
     func saveSearchHistory(query: String) {
          
        if !query.isEmpty && !previousSearches.contains(query) {
-           previousSearches.insert(query, at: 0)
-         
-           if previousSearches.count > 5 {
-               previousSearches.removeLast()
-           }
+           previousSearches.append(query)
            UserDefaults.standard.set(previousSearches, forKey: "searchHistory")
        }
     }
+    
+    func saveArticleToUserDefaults(article: Article) {
+        savedArticles.append(article)
+           do {
+               let encoder = JSONEncoder()
+               let data = try encoder.encode(savedArticles)
+               UserDefaults.standard.set(data, forKey: "saveArticles")
+           } catch {
+               print("Failed to encode topNewList: \(error.localizedDescription)")
+           }
+       }
+       
+    
+       func loadSavedArticleFromUserDefaults() {
+           if let data = UserDefaults.standard.data(forKey: "saveArticles") {
+               do {
+                   let decoder = JSONDecoder()
+                   let articles = try decoder.decode([Article].self, from: data)
+                   self.savedArticles = articles
+               } catch {
+                   print("Failed to decode topNewList: \(error.localizedDescription)")
+               }
+           }
+       }
     
     //MARK: Updating articles list based on the query(Searched text)
     func filterSearchedResult(query: String) {
@@ -136,6 +177,10 @@ class HomeViewModel {
     //MARK: Searched Artcile
     func getFilterArticleAt(index: Int) -> Article? {
         return filteredNewsArticles[safe: index]
+    }
+    
+    func getSavedArticleAt(index: Int) -> Article? {
+        return savedArticles[safe: index]
     }
     
     //MARK: Add/Delete article from core data on swipe action

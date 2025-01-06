@@ -24,6 +24,10 @@ class TopNewsCollectionViewCell: UICollectionViewCell {
         setup()
     }
     
+    override func prepareForReuse() {
+        thumbnailImage.image = nil
+    }
+    
     func setup() {
         self.contentView.layer.cornerRadius = 35
         self.contentView.layer.masksToBounds = true
