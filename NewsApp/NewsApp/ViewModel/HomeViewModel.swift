@@ -101,6 +101,7 @@ class HomeViewModel {
         }
     }
     
+    //MARK: Reset data on pull to refresh and tab switch
     func resetAllDataOnTabSwtich() async {
         allNewsList = []
         topNewList = []
@@ -134,6 +135,7 @@ class HomeViewModel {
        }
     }
     
+    //MARK: Save article in the user defaults
     func saveArticleToUserDefaults(article: Article) {
         savedArticles.append(article)
            do {
@@ -145,18 +147,18 @@ class HomeViewModel {
            }
        }
        
-    
-       func loadSavedArticleFromUserDefaults() {
-           if let data = UserDefaults.standard.data(forKey: "saveArticles") {
-               do {
-                   let decoder = JSONDecoder()
-                   let articles = try decoder.decode([Article].self, from: data)
-                   self.savedArticles = articles
-               } catch {
-                   print("Failed to decode topNewList: \(error.localizedDescription)")
-               }
+    //MARK: Loading the article from the user defaults
+   func loadSavedArticleFromUserDefaults() {
+       if let data = UserDefaults.standard.data(forKey: "saveArticles") {
+           do {
+               let decoder = JSONDecoder()
+               let articles = try decoder.decode([Article].self, from: data)
+               self.savedArticles = articles
+           } catch {
+               print("Failed to decode topNewList: \(error.localizedDescription)")
            }
        }
+   }
     
     //MARK: Updating articles list based on the query(Searched text)
     func filterSearchedResult(query: String) {

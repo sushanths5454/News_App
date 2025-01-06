@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 extension String {
-    // Method to calculate the width of a string based on the font and max width
+    //MARK:  Method to calculate the width of a string based on the font and max width
     func calculateWidth(font: UIFont, maxWidth: CGFloat) -> CGFloat {
         let size = (self as NSString).boundingRect(with: CGSize(width: maxWidth, height: .greatestFiniteMagnitude),
                                                    options: .usesLineFragmentOrigin,
@@ -17,6 +17,7 @@ extension String {
         return size.width
     }
     
+    //MARK: Date in this format = 12-01-2025
     func convertDateString() -> String? {
       
         let inputFormatter = DateFormatter()

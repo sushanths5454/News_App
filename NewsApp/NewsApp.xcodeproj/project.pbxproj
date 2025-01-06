@@ -15,7 +15,6 @@
 		8428CAA82D27AD480011829E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8428CAA62D27AD480011829E /* LaunchScreen.storyboard */; };
 		8428CABD2D27AD480011829E /* NewsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CABC2D27AD480011829E /* NewsAppUITests.swift */; };
 		8428CABF2D27AD480011829E /* NewsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CABE2D27AD480011829E /* NewsAppUITestsLaunchTests.swift */; };
-		8428CAD02D27B95E0011829E /* AppIntrodViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CACF2D27B95E0011829E /* AppIntrodViewcontroller.swift */; };
 		8428CAD32D27B9DE0011829E /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CAD22D27B9DE0011829E /* Array+Extension.swift */; };
 		8428CADC2D27C6C00011829E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CADA2D27C6C00011829E /* HomeViewController.swift */; };
 		8428CADD2D27C6C00011829E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8428CADB2D27C6C00011829E /* HomeViewController.xib */; };
@@ -88,7 +87,6 @@
 		8428CAB82D27AD480011829E /* NewsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8428CABC2D27AD480011829E /* NewsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITests.swift; sourceTree = "<group>"; };
 		8428CABE2D27AD480011829E /* NewsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8428CACF2D27B95E0011829E /* AppIntrodViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntrodViewcontroller.swift; sourceTree = "<group>"; };
 		8428CAD22D27B9DE0011829E /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		8428CADA2D27C6C00011829E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8428CADB2D27C6C00011829E /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -239,7 +237,6 @@
 		8428CACE2D27B9380011829E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8428CACF2D27B95E0011829E /* AppIntrodViewcontroller.swift */,
 				8428CAF12D284A510011829E /* HomeViewModel.swift */,
 				849249512D2AA33500EF2E7E /* BookMarkViewModel.swift */,
 			);
@@ -474,7 +471,6 @@
 				849249092D29951300EF2E7E /* NewsDetailViewController.swift in Sources */,
 				8428CAF92D2855300011829E /* CategoryHeaderCollectionViewCell.swift in Sources */,
 				849249032D29390A00EF2E7E /* UIImage+Extension.swift in Sources */,
-				8428CAD02D27B95E0011829E /* AppIntrodViewcontroller.swift in Sources */,
 				8428CAE72D2831FB0011829E /* UIColor+Extension.swift in Sources */,
 				849249312D29CF2400EF2E7E /* Model.xcdatamodeld in Sources */,
 				8428CA992D27AD450011829E /* AppDelegate.swift in Sources */,

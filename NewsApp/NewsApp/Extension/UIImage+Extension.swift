@@ -16,13 +16,10 @@ extension UIImageView {
         
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
-            
             if let image = UIImage(data: data) {
                 self.image = image
             }
-            
         } catch {
-            
         }
     }
 }
