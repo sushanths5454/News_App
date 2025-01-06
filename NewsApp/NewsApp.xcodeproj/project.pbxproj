@@ -17,9 +17,6 @@
 		8428CABF2D27AD480011829E /* NewsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CABE2D27AD480011829E /* NewsAppUITestsLaunchTests.swift */; };
 		8428CAD02D27B95E0011829E /* AppIntrodViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CACF2D27B95E0011829E /* AppIntrodViewcontroller.swift */; };
 		8428CAD32D27B9DE0011829E /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CAD22D27B9DE0011829E /* Array+Extension.swift */; };
-		8428CAD52D27C0C90011829E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CAD42D27C0C90011829E /* SplashViewController.swift */; };
-		8428CAD82D27C2750011829E /* AppIntrodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CAD62D27C2750011829E /* AppIntrodViewController.swift */; };
-		8428CAD92D27C2750011829E /* AppIntrodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8428CAD72D27C2750011829E /* AppIntrodViewController.xib */; };
 		8428CADC2D27C6C00011829E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CADA2D27C6C00011829E /* HomeViewController.swift */; };
 		8428CADD2D27C6C00011829E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8428CADB2D27C6C00011829E /* HomeViewController.xib */; };
 		8428CAE42D27CA670011829E /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428CAE22D27CA670011829E /* HomeTabViewController.swift */; };
@@ -93,9 +90,6 @@
 		8428CABE2D27AD480011829E /* NewsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8428CACF2D27B95E0011829E /* AppIntrodViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntrodViewcontroller.swift; sourceTree = "<group>"; };
 		8428CAD22D27B9DE0011829E /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
-		8428CAD42D27C0C90011829E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		8428CAD62D27C2750011829E /* AppIntrodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntrodViewController.swift; sourceTree = "<group>"; };
-		8428CAD72D27C2750011829E /* AppIntrodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppIntrodViewController.xib; sourceTree = "<group>"; };
 		8428CADA2D27C6C00011829E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8428CADB2D27C6C00011829E /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		8428CAE22D27CA670011829E /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
@@ -226,9 +220,6 @@
 		8428CACB2D27B8C60011829E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8428CAD42D27C0C90011829E /* SplashViewController.swift */,
-				8428CAD62D27C2750011829E /* AppIntrodViewController.swift */,
-				8428CAD72D27C2750011829E /* AppIntrodViewController.xib */,
 				8428CADA2D27C6C00011829E /* HomeViewController.swift */,
 				8428CADB2D27C6C00011829E /* HomeViewController.xib */,
 				8428CAE22D27CA670011829E /* HomeTabViewController.swift */,
@@ -435,7 +426,6 @@
 				849249562D2AFB6B00EF2E7E /* SearchResultViewController.xib in Resources */,
 				8428CAFA2D2855300011829E /* CategoryHeaderCollectionViewCell.xib in Resources */,
 				849249132D29B03800EF2E7E /* NewsContentTableViewCell.xib in Resources */,
-				8428CAD92D27C2750011829E /* AppIntrodViewController.xib in Resources */,
 				8428CAA82D27AD480011829E /* LaunchScreen.storyboard in Resources */,
 				8492494E2D2A983100EF2E7E /* NewsPopupViewController.xib in Resources */,
 				8428CADD2D27C6C00011829E /* HomeViewController.xib in Resources */,
@@ -477,7 +467,6 @@
 				8492495F2D2B97F200EF2E7E /* BaseViewController.swift in Sources */,
 				8428CAFC2D285B140011829E /* UIString+Extension.swift in Sources */,
 				849249012D2928B700EF2E7E /* TopNewsModel.swift in Sources */,
-				8428CAD82D27C2750011829E /* AppIntrodViewController.swift in Sources */,
 				8428CAEF2D283CE00011829E /* TopNewsContianerViewTableViewCell.swift in Sources */,
 				849249502D2AA13600EF2E7E /* BookMarkViewController.swift in Sources */,
 				8428CA9D2D27AD450011829E /* ViewController.swift in Sources */,
@@ -501,7 +490,6 @@
 				8428CAF22D284A510011829E /* HomeViewModel.swift in Sources */,
 				8428CA9B2D27AD450011829E /* SceneDelegate.swift in Sources */,
 				849248FA2D28F04400EF2E7E /* NewsTableViewCell.swift in Sources */,
-				8428CAD52D27C0C90011829E /* SplashViewController.swift in Sources */,
 				849249462D29D56A00EF2E7E /* Articles+CoreDataProperties.swift in Sources */,
 				849249452D29D56A00EF2E7E /* Articles+CoreDataClass.swift in Sources */,
 				8428CAE42D27CA670011829E /* HomeTabViewController.swift in Sources */,
